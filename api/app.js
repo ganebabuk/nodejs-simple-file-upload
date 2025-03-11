@@ -32,6 +32,7 @@ app.post("/api/upload", (req, res) => {
     const newFileName = `uploaded_${Date.now()}${extension}`;
     const filePath = path.join(uploadDir, newFileName);
     const writeStream = fs.createWriteStream(filePath);
+    // The entire req body that is file data directly piped to the writable stream
     req.pipe(writeStream);
     writeStream.on("finish", () => {
         console.log("Renamed File:", newFileName);
