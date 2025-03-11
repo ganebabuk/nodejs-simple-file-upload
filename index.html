@@ -47,7 +47,7 @@
                 });
 
                 const result = await response.json();
-                console.log("API Response:", result); // Debug log
+                console.log("API Response:", result);
                 document.getElementById("result").innerText = "Renamed File: " + result.filename;
             } catch (error) {
                 console.error("Upload failed:", error);
